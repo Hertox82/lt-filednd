@@ -1,0 +1,24 @@
+
+<div class="box-drag-and-drop">
+  <div class="wrapper">
+    <div class="box-file" *ngFor="let file of listOfFile">
+            <img src="{{file.img}}" alt="{{file.name}}">
+            <a class="close-button" (click) = "deleteFile(file)">X</a>
+    </div> 
+    <div class="dropzone"
+    fileDrop
+    (filesDropped) = "handleDrop($event)"
+    (filesHovered) = "dropzoneState($event)"
+    [ngClass]= "{'active': dropzoneActive}"
+    >
+    <p><span>+ </span>Add Image</p>
+    <p class="dropImageHereText">Drop image here to upload</p>
+    </div>
+    <div class="wrapper-input">
+      <input type="file" id="files" name="files" style="display: none;" (change) = "onFileSelected($event)" #fileInput/>
+    
+      <button type="button" (click)="fileInput.click()">Select file</button>
+    </div>
+  </div>
+</div>
+

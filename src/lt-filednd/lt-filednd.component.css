@@ -1,0 +1,83 @@
+.draggable {
+    cursor: move;
+    user-select: none;
+}
+
+.movable:not(.dragging) {
+    transition: transform 300ms ease-in-out;
+}
+
+
+.dropzone {
+    border: 1px dashed black;
+    width: 230px;
+    height: 110px;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    background-color: #e9e9e9;
+    cursor: pointer;
+}
+
+.dropzone p {
+    text-transform: uppercase;
+    font-weight: bold;
+    
+}
+
+.dropzone .dropImageHereText {
+    text-transform: unset;
+    font-weight: unset;
+    font-style: italic;
+}
+
+.box-file {
+    float:left;
+    position:relative;
+    margin: 0px 15px 10px 0px;
+    padding:0;
+}
+
+.box-file img {
+    width: 110px;
+    height: 110px;
+    position: relative;
+    cursor: pointer;
+}
+
+.box-file .close-button {
+    position: absolute;
+    top: 0px;
+    padding: 9px;
+    background-color: red;
+    border-radius: 46px;
+    width: 9px;
+    height: 9px;
+    text-align: center;
+    color: white;
+    left: -11px;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: -3px -1px 7px grey;
+
+}
+
+.box-drag-and-drop .wrapper {
+    border: 1px solid black;
+    padding:50px;
+    position: relative;
+}
+
+.box-drag-and-drop button {
+    position: absolute;
+    bottom:-80px;
+    left:0px;
+    margin-top: 20px;
+    padding: 20px 30px;
+    background-color: #dbdbdb;
+    border:unset;
+    text-transform: uppercase;
+    box-shadow: 3px 3px 10px grey;
+    cursor: pointer;
+    color:white;
+}
