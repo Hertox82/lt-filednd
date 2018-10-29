@@ -22,3 +22,4 @@ export class AppComponent {
       this.lista.splice(index, 1);
   }
 }
+}
