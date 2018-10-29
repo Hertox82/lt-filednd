@@ -1,27 +1,52 @@
 # LtDragAndDrop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
+This component help you to generate a dropzone in order to make an upload file system.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+in your component script, you have to import LtFile and create 2 function in order to pass at the LtFilDnd Component
 
-## Code scaffolding
+```typescript
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+import { Component } from '@angular/core';
+import { LtFile } from '../support/interface';
 
-## Build
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+  public arrayList: LtFile[] = [];
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+  fileToUpdate(files: LtFile[]) {
+    console.log(files);
+  }
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+  fileToDelete(file: LtFile) {
+    const index = this.arrayList.indexOf(file);
+    if ( index > -1) {
+      this.arrayList.splice(index, 1);
+    }
+  }
+}
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+LtFileDnD have two different EventEmitter:
+
+[-] *uploadFile* that send event when one or more file are insert into the Dropzone
+[-] *deletedFile* that send event when someone try to delete the file. 
+
+```html
+<h3>Drop File</h3>
+
+<lt-filednd
+[listOfFile]="arrayList"
+(uploadFile)="fileToUpdate($event)"
+(deletedFile)="fileToDelete($event)"
+></lt-filednd>
+
+```
