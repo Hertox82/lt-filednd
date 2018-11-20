@@ -22,7 +22,7 @@ export class LtFiledndComponent implements OnInit {
   handleDrop(fileList: FileList) {
       return Promise.all(
         [].map.call(fileList, (file) => {
-          console.log(file);
+          // console.log(file);
           return new Promise((resolve, reject) => {
           const reader = new FileReader();
           reader.onloadend = () => {
