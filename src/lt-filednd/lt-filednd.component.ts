@@ -35,7 +35,8 @@ export class LtFiledndComponent implements OnInit {
           results.forEach((obj: {result: string| ArrayBuffer, file: File}) => {
             let fileTU: LtFile = {
               img: '',
-              name: obj.file.name
+              name: obj.file.name,
+              file: obj.file
             };
             if (obj.file.type === 'image/png' || obj.file.type === 'image/jpeg') {
             fileTU.img = obj.result;
