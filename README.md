@@ -1,7 +1,14 @@
 # LtDragAndDrop
 
-This component help you to generate a dropzone in order to make an upload file system.
+| version      | Angular    |
+| ------       | ---------  |
+| **^1.0.0**   | **^5.0.0** |
+| **^2.0.0**   | **^6.0.0** |
 
+<sub><sup>
+*N.B. from version ^2.0.0 some of libraries are updated, resolved some critical bugs*</sup></sub>
+
+This component help you to generate a dropzone in order to make an upload file system.
 
 in your component script, you have to import LtFile and create 2 function in order to pass at the LtFilDnd Component
 
