@@ -2,7 +2,7 @@
 <div class="box-drag-and-drop">
   <div class="wrapper">
     <div class="box-file" *ngFor="let file of listOfFile">
-            <img src="{{file.img}}" alt="{{file.name}}">
+            <img [src]="file.img" alt="{{file.name}}" title="{{ file.name }}">
             <a class="close-button" (click) = "deleteFile(file)">X</a>
     </div> 
     <div class="dropzone"

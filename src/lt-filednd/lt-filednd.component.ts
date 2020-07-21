@@ -1,11 +1,12 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, Inject } from '@angular/core';
 import { LtFile } from '../support/interface';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
   selector: 'lt-filednd',
   templateUrl: './lt-filednd.component.html',
-  styleUrls: ['./lt-filednd.component.css']
+  styleUrls: ['./lt-filednd.component.css'],
 })
 export class LtFiledndComponent implements OnInit {
 
@@ -14,6 +15,8 @@ export class LtFiledndComponent implements OnInit {
   @Input() public listOfFile: LtFile[];
   @Output() public  uploadFile: EventEmitter<LtFile[]> = new EventEmitter<LtFile[]>();
   @Output() public deletedFile: EventEmitter<LtFile> = new EventEmitter<LtFile>();
+
+  constructor(@Inject(DomSanitizer) private sanitizer: DomSanitizer) {}
 
   dropzoneState($event: boolean) {
     this.dropzoneActive = $event;
@@ -32,22 +35,26 @@ export class LtFiledndComponent implements OnInit {
         });
       })).then((results) => {
         const listToUpdate: LtFile[] = [];
-          results.forEach((obj: {result: string| ArrayBuffer, file: File}) => {
+          results.forEach((obj: {result: string|ArrayBuffer, file: File}) => {
             let fileTU: LtFile = {
               img: '',
               name: obj.file.name,
               file: obj.file
             };
-            if (obj.file.type === 'image/png' || obj.file.type === 'image/jpeg') {
+            if (obj.file.type === 'image/png' || obj.file.type === 'image/jpeg' ) {
             fileTU.img = obj.result;
             listToUpdate.push(fileTU);
             this.listOfFile.push(fileTU);
-          }else if (obj.file.type === 'application/pdf') {
+          } else if (obj.file.type === 'application/pdf') {
             fileTU.img =  'assets/433744_180206010530.png';
             listToUpdate.push(fileTU);
             this.listOfFile.push(fileTU);
           } else if (obj.file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
             fileTU.img = 'assets/icons8-ms-excel-500.png';
+            listToUpdate.push(fileTU);
+            this.listOfFile.push(fileTU);
+          } else if (obj.file.type === 'image/svg+xml') {
+            fileTU.img = this.sanitizer.bypassSecurityTrustUrl(obj.result as string);
             listToUpdate.push(fileTU);
             this.listOfFile.push(fileTU);
           } else {
@@ -67,8 +74,6 @@ export class LtFiledndComponent implements OnInit {
   deleteFile(file: LtFile) {
     this.deletedFile.emit(file);
   }
-
-  constructor() { }
 
   ngOnInit() {}
 
