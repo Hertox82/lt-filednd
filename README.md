@@ -6,7 +6,9 @@
 | **^2.0.0**   | **^6.0.0** |
 
 <sub><sup>
-*N.B. from version **>=2.0.0** some of libraries are updated, resolved some critical bugs*</sup></sub>
+*N.B. from version **>= 2.0.0** some of libraries are updated, resolved some critical bugs*</sup></sub>
+
+  To see what has been changed in the updates see the [CHANGELOG](CHANGELOG.md) 
 
 This component help you to generate a dropzone in order to make an upload file system.
 
