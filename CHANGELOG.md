@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.1.1 (23-07-2020)
+
+- Removed BrowserModule from import Module
+
 ## v2.1.0 (21-07-2020)
 
 - Add support to svg file
