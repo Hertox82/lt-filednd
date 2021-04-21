@@ -18,8 +18,8 @@ export class AppComponent {
 
   fileToDelete(file: LtFile) {
     const index = this.lista.indexOf(file);
-    if ( index > -1) {
-      this.lista.splice(index, 1);
+      if ( index > -1) {
+        this.lista.splice(index, 1);
+    }
   }
-}
 }
