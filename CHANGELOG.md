@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v3.0.0 (21-04-2021)
+
+- Add support to Angular 7
+- Breaking changes:
+  - End support to Angular 6
+  
 ## v2.1.1 (23-07-2020)
 
 - Removed BrowserModule from import Module
