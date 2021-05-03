@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v4.0.0 (03-05-2021)
+
+- Add support to Angular 8
+- Breaking changes:
+  - End support to Angular 7
+
 ## v3.0.0 (21-04-2021)
 
 - Add support to Angular 7
