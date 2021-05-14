@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v6.0.0 (14-05-2021)
+
+- Upgrade to Angular 10
+- Breaking changes:
+  - End support to Angular 9
+
 ## v5.0.0 (12-05-2021)
 
 - Add support to Angular 9
