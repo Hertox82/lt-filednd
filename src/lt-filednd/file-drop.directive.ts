@@ -11,7 +11,7 @@ export class FileDropDirective {
   constructor() { }
 
   @HostListener('drop', ['$event'])
-  onDrop(event) {
+  onDrop(event: any): void {
     event.preventDefault();
     const transfer = event.dataTransfer;
     this.filesDropped.emit(transfer.files);
@@ -19,14 +19,14 @@ export class FileDropDirective {
   }
 
   @HostListener('dragover', ['$event'])
-  onDragOver(event) {
+  onDragOver(event: any): void {
     event.preventDefault();
 
     this.filesHovered.emit(true);
   }
 
   @HostListener('dragleave', ['$event'])
-  onDragLeave(event) {
+  onDragLeave(event: any): void {
     this.filesHovered.emit(false);
   }
 

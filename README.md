@@ -1,18 +1,19 @@
 # LtDragAndDrop
 
-| version      | Angular    |
-| ------       | ---------  |
-| **^1.0.0**   | **^5.0.0** |
-| **^2.0.0**   | **^6.0.0** |
-| **^3.0.0**   | **^7.0.0** |
-| **^4.0.0**   | **^8.0.0** |
-| **^5.0.0**   | **^9.0.0** |
+| version      |   Angular   |
+| ------       | ----------  |
+| **^1.0.0**   | **^5.0.0**  |
+| **^2.0.0**   | **^6.0.0**  |
+| **^3.0.0**   | **^7.0.0**  |
+| **^4.0.0**   | **^8.0.0**  |
+| **^5.0.0**   | **^9.0.0**  |
 | **^6.0.0**   | **^10.0.0** |
+| **^7.0.0**   | **^11.0.0** |
 
 <sub><sup>
 *N.B. from version **>= 2.0.0** some of libraries are updated, resolved some critical bugs*</sup></sub>
 
-  To see what has been changed in the updates see the [CHANGELOG](CHANGELOG.md) 
+  To see what has been changed in the updates see the [ChangeLog](CHANGELOG.md)
 
 This component help you to generate a dropzone in order to make an upload file system.
 

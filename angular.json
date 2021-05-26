@@ -19,7 +19,7 @@
                   "outputPath": "dist",
                   "index": "src/index.html",
                   "polyfills": "src/polyfills.ts",
-                  "tsConfig": "src/tsconfig.app.json",
+                  "tsConfig": "tsconfig.app.json",
                   "main": "src/main.ts",
                   "aot": true,
                   "assets": [
