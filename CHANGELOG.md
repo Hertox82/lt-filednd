@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v8.0.0 (13-06-2022)
+
+- Upgrade to Angular 12
+- Breaking changes:
+  - End support to Angular 11
+
 ## v7.0.0 (26-05-2021)
 
 - Upgrade to Angular 11

@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'lt-filednd',
   templateUrl: './lt-filednd.component.html',
   styleUrls: ['./lt-filednd.component.css'],
@@ -27,7 +28,6 @@ export class LtFiledndComponent implements OnInit {
   handleDrop(fileList: FileList): Promise<any> {
       return Promise.all(
         [].map.call(fileList, (file) => {
-          // console.log(file);
           return new Promise((resolve, reject) => {
           const reader = new FileReader();
           reader.onloadend = () => {
@@ -39,7 +39,7 @@ export class LtFiledndComponent implements OnInit {
       })).then((results: any) => {
         const listToUpdate: LtFile[] = [];
         results.forEach((obj: {result: string|ArrayBuffer, file: File}) => {
-          let fileTU: LtFile = {
+          const fileTU: LtFile = {
             img: '',
             name: obj.file.name,
             file: obj.file
